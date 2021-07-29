@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/under"
+        android:layout_marginBottom="20dp"
+        >
+        <ImageButton
+            android:id="@+id/backI"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/back_icon"
+            android:onClick="backI"></ImageButton>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:text="가게 이름"
+            android:layout_marginEnd="100dp"
+            android:singleLine="true"
+            android:fontFamily="@font/nanumsquare_aceb"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever">
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/callI"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/call"
+            android:onClick="call"></ImageButton>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="120"
+        app:scale_base_height="95"
+        android:background="@drawable/under">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            app:scale_width="40"
+            app:scale_height="10"
+            app:scale_textsize="8"
+            app:scale_left="3"
+            app:scale_top = "3"
+            android:background="@color/white"
+            android:drawableEnd="@drawable/menu_icon"
+            android:fontFamily="@font/nanumsquare_acb"
+            android:paddingStart="5dp"
+            android:text="추천 메뉴"
+            android:textColor="#080909"
+            tools:ignore="MissingPrefix" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="224dp"
+            android:scaleType="centerCrop"
+            app:scale_width="50"
+            app:scale_height="50"
+            app:scale_top="20"
+            app:scale_left="5"
+            app:srcCompat="@mipmap/ic_launcher"
+            tools:ignore="MissingPrefix" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            app:scale_top="20"
+            app:scale_height="50"
+            app:scale_width="50"
+            app:scale_left="65"
+            android:layout_width="wrap_content"
+            android:layout_height="224dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            tools:ignore="MissingPrefix"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquare_acb"
+            android:text="추천 메뉴"
+            android:textColor="#E87C00"
+            app:scale_height="8"
+            app:scale_left="5.8"
+            app:scale_textsize="4"
+            app:scale_top="75"
+            app:scale_width="110"
+            app:textview_wrapcontent_direction="bottom"
+            app:textview_wrapcontent_movesiblings="true"
+            app:textview_wrapcontent_resizesurrounded="true"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquare_acb"
+            android:text="* 상기 이미지는 웹 크롤링을 통해 얻어온 이미지 입니다."
+            android:textColor="#9C9999"
+            app:scale_height="8"
+            app:scale_left="5.8"
+            app:scale_textsize="3"
+            app:scale_top="85"
+            app:scale_width="110"
+            app:textview_wrapcontent_direction="bottom"
+            app:textview_wrapcontent_movesiblings="true"
+            app:textview_wrapcontent_resizesurrounded="true"
+            tools:ignore="MissingPrefix" />
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableRight="@drawable/store_icon"
+        android:fontFamily="@font/nanumsquare_acb"
+        android:paddingStart="5dp"
+        android:paddingBottom="13dp"
+        android:paddingTop="18dp"
+        android:text="가게 정보"
+        android:layout_marginStart="10dp"
+        android:textColor="#080909"
+        android:textSize="26sp" />
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="200"
+        app:scale_base_height="128"
+        android:layout_marginLeft="20dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/storen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="◦주소: "
+            android:fontFamily="@font/nanumsquare_acr"
+            android:textColor="#080909"
+            app:scale_width="50"
+            app:scale_height="20"
+            app:scale_textsize="10"
+            app:scale_top="3"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주소"
+            android:fontFamily="@font/nanumsquare_acr"
+            android:textColor="#080909"
+            app:scale_width="140"
+            app:scale_height="15"
+            app:scale_textsize="10"
+            app:scale_left="35"
+            app:scale_top="3"
+            app:textview_wrapcontent_direction="bottom"
+            app:textview_wrapcontent_movesiblings="true"
+            app:textview_wrapcontent_resizesurrounded="true"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전화번호"
+            android:textColor="#0B0B0B"
+            android:fontFamily="@font/nanumsquare_acr"
+            app:scale_width="200"
+            app:scale_height="15"
+            app:scale_textsize="10"
+            app:scale_top="24"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오픈시간"
+            android:textColor="#0B0B0B"
+            android:fontFamily="@font/nanumsquare_acr"
+            app:scale_width="200"
+            app:scale_height="15"
+            app:scale_textsize="10"
+            app:scale_top="41"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="브레이크 타임"
+            android:fontFamily="@font/nanumsquare_acr"
+            android:textColor="#0B0B0B"
+            app:scale_width="200"
+            app:scale_height="15"
+            app:scale_textsize="10"
+            app:scale_top="58"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="휴무일"
+            android:fontFamily="@font/nanumsquare_acr"
+            android:textColor="#0B0B0B"
+            app:scale_width="200"
+            app:scale_height="15"
+            app:scale_textsize="10"
+            app:scale_top="75"
+            tools:ignore="MissingPrefix"/>
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="카테고리"
+            android:fontFamily="@font/nanumsquare_acr"
+            android:textColor="#0B0B0B"
+            app:scale_width="100"
+            app:scale_height="20"
+            app:scale_textsize="10"
+            app:scale_top="92"
+            tools:ignore="MissingPrefix"/>
+
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</LinearLayout>

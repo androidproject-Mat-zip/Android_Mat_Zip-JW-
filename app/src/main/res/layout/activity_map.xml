@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    app:umanoDragView="@id/dragView"
+
+    app:umanoOverlay="false"
+    app:umanoPanelHeight="70dp"
+    app:umanoParallaxOffset="200dp"
+    app:umanoShadowHeight="10dp"
+    tools:context=".MapActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="search"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:scale_base_height="1000"
+                app:scale_base_width="10000">
+
+                <Spinner
+                    android:id="@+id/regionList"
+                    android:layout_width="167dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nanumsquare_acr"
+                    app:scale_height="1000"
+                    app:scale_width="4000"
+                    tools:ignore="MissingPrefix" />
+
+                <EditText
+                    android:id="@+id/searchName"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:fontFamily="@font/nanumsquare_acr"
+                    android:maxLength="20"
+                    android:privateImeOptions="defaultInputmode=korean"
+                    android:singleLine="true"
+                    app:scale_height="1000"
+                    app:scale_left="4000"
+                    app:scale_textsize="400"
+                    app:scale_top="0"
+                    app:scale_width="5000"
+                    tools:ignore="MissingPrefix" />
+
+                <ImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:onClick="search"
+                    android:src="@drawable/search"
+                    app:scale_height="900"
+                    app:scale_left="9050"
+                    app:scale_top="50"
+                    app:scale_width="950"
+                    tools:ignore="MissingPrefix" />
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:scale_base_height="100"
+                app:scale_base_width="1000">
+
+                <Spinner
+                    android:id="@+id/categoryList"
+                    android:layout_width="234dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nanumsquare_acr"
+                    app:scale_height="100"
+                    app:scale_left="0"
+                    app:scale_top="0"
+                    app:scale_width="800"
+                    tools:ignore="MissingPrefix" />
+
+                <com.ssomai.android.scalablelayout.ScalableLayout
+                    android:layout_width="99dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:scale_base_height="200"
+                    app:scale_base_width="400"
+                    app:scale_height="100"
+                    app:scale_left="800"
+                    app:scale_top="0"
+                    app:scale_width="200"
+                    tools:ignore="MissingPrefix">
+
+                    <Button
+                        android:id="@+id/mypage"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/orange_background"
+                        android:fontFamily="@font/nanumsquare_aceb"
+                        android:text="INFO"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:scale_height="150"
+                        app:scale_left="50"
+                        app:scale_textsize="60"
+                        app:scale_top="25"
+                        app:scale_width="300"
+                        tools:ignore="MissingPrefix" />
+                </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.naver.maps.map.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:id="@+id/dragView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="false"
+        android:orientation="vertical"
+        app:scale_base_height="100"
+        app:scale_base_width="100">
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquare_aceb"
+            android:paddingLeft="20dp"
+            android:text="장소를 선택해주세요"
+            app:scale_height="20"
+            app:scale_textsize="7"
+            app:scale_top="4"
+            app:scale_width="100"
+            tools:ignore="MissingPrefix" />
+
+
+        <com.ssomai.android.scalablelayout.ScalableLayout
+            android:id="@+id/infosetView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical"
+            app:scale_base_height="100"
+            app:scale_base_width="100">
+
+            <ListView
+                android:id="@+id/infoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoView"
+                android:clickable="true"
+                android:divider="@drawable/list_padding"
+                android:dividerHeight="1dp"
+                app:scale_height="80"
+                app:scale_textsize="20"
+                app:scale_top="20"
+                app:scale_width="100"
+                tools:ignore="MissingPrefix"></ListView>
+
+            <Button
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/orange_background"
+                android:fontFamily="@font/nanumsquare_aceb"
+                android:text="      더보기      "
+
+                android:textColor="#FFFFFF"
+                app:scale_height="10"
+                app:scale_left="25"
+                app:scale_textsize="5"
+                app:scale_top="60"
+                app:scale_width="50"
+                tools:ignore="MissingPrefix" />
+
+        </com.ssomai.android.scalablelayout.ScalableLayout>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

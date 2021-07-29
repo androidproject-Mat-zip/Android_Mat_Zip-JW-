@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SearchActivity">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:scale_base_height="100"
+        app:scale_base_width="1000">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:scale_left="10"
+            app:scale_width="800"
+            app:scale_height="100"
+            android:background="@null"
+            android:drawableLeft="@drawable/search_icon"
+            android:hint="가게명 검색"
+            android:fontFamily="@font/nanumsquare_acb"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textColorHint="#000000"
+            app:scale_textsize="50"
+            tools:ignore="MissingPrefix" />
+
+        <ImageButton
+            android:id="@+id/clearB"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/cross_icon"
+            android:focusable="auto"
+            app:scale_height="70"
+            app:scale_left="900"
+            app:scale_top="28"
+            app:scale_width="80"
+            tools:ignore="MissingPrefix" />
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:background="#BAC6BA" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop = "12dp"/>
+
+
+</LinearLayout>
