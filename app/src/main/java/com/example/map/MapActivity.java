@@ -88,8 +88,11 @@ public class MapActivity extends AppCompatActivity
 
 
         //map fragment setting
+
+        String pincode = "##should get from Naver Cloud Platform##";
+
         NaverMapSdk.getInstance(this).setClient(
-                new NaverMapSdk.NaverCloudPlatformClient("0f8o7wx6hz"));
+                new NaverMapSdk.NaverCloudPlatformClient(pincode));
         setContentView(R.layout.activity_map);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -115,23 +118,23 @@ public class MapActivity extends AppCompatActivity
                 String regular ="";
 
                 for (QueryDocumentSnapshot doc : value){
-                        if (doc.getBoolean("breaktimeistrue")!=null&&doc.getBoolean("breaktimeistrue")) {
-                            breaktime = doc.getString("breaktime");
-                        } else
-                            breaktime = "X";
-                        if (doc.get("regularholiday")!=null&&doc.get("regularholiday") != "") {
-                            regular = doc.getString("regularholiday");
-                        } else
-                            regular = "X";
-                        if (doc.get("name") != null) {
-                            storeSet_total.add(new Menu(doc.getString("name"), doc.getString("address"), doc.getString("telephone"),
-                                    doc.getString("starttime"), doc.getString("endtime"), breaktime, doc.getString("img1"),
-                                    doc.getString("img2"), doc.getString("menu"), regular, doc.getDouble("latitude"),
-                                    doc.getDouble("longitude"), doc.getString("category")));
-                            //initially get all the data from the firebase
-                            //storeInfo that we need will be obtained from this arrayList(storeSet_total)
-                            refresh();
-                        }
+                    if (doc.getBoolean("breaktimeistrue")!=null&&doc.getBoolean("breaktimeistrue")) {
+                        breaktime = doc.getString("breaktime");
+                    } else
+                        breaktime = "X";
+                    if (doc.get("regularholiday")!=null&&doc.get("regularholiday") != "") {
+                        regular = doc.getString("regularholiday");
+                    } else
+                        regular = "X";
+                    if (doc.get("name") != null) {
+                        storeSet_total.add(new Menu(doc.getString("name"), doc.getString("address"), doc.getString("telephone"),
+                                doc.getString("starttime"), doc.getString("endtime"), breaktime, doc.getString("img1"),
+                                doc.getString("img2"), doc.getString("menu"), regular, doc.getDouble("latitude"),
+                                doc.getDouble("longitude"), doc.getString("category")));
+                        //initially get all the data from the firebase
+                        //storeInfo that we need will be obtained from this arrayList(storeSet_total)
+                        refresh();
+                    }
 
                 }
             }
@@ -323,27 +326,27 @@ public class MapActivity extends AppCompatActivity
         btnMoreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    //storeInfo has been set when the matching marker was clicked(onClick method).
-                    if(storeInfo!=null){
-                        if(prev_storeName!=""){
-                            //send storeinfo to detail page
-                            intent.putExtra("ima",storeInfo.getIma());
-                            intent.putExtra("ima2",storeInfo.getIma2());
-                            intent.putExtra("name",storeInfo.getName());
-                            intent.putExtra("add",storeInfo.getAdd());
-                            intent.putExtra("num",storeInfo.getNum());
-                            intent.putExtra("opentime",storeInfo.getOpentime());
-                            intent.putExtra("endtime",storeInfo.getEndtime());
-                            intent.putExtra("breakT",storeInfo.getBreakT());
-                            intent.putExtra("recommend",storeInfo.getRecommend());
-                            intent.putExtra("holiday",storeInfo.getHoliday());
-                            intent.putExtra("category",storeInfo.getCate());
-                            startActivity(intent);
-                        }
-
+                //storeInfo has been set when the matching marker was clicked(onClick method).
+                if(storeInfo!=null){
+                    if(prev_storeName!=""){
+                        //send storeinfo to detail page
+                        intent.putExtra("ima",storeInfo.getIma());
+                        intent.putExtra("ima2",storeInfo.getIma2());
+                        intent.putExtra("name",storeInfo.getName());
+                        intent.putExtra("add",storeInfo.getAdd());
+                        intent.putExtra("num",storeInfo.getNum());
+                        intent.putExtra("opentime",storeInfo.getOpentime());
+                        intent.putExtra("endtime",storeInfo.getEndtime());
+                        intent.putExtra("breakT",storeInfo.getBreakT());
+                        intent.putExtra("recommend",storeInfo.getRecommend());
+                        intent.putExtra("holiday",storeInfo.getHoliday());
+                        intent.putExtra("category",storeInfo.getCate());
+                        startActivity(intent);
                     }
 
                 }
+
+            }
 
         });
 
@@ -576,7 +579,7 @@ public class MapActivity extends AppCompatActivity
 
                         prev_storeName = "";
                         //to identify whether a current marker was clicked just before this click next time.
-                       return false;
+                        return false;
                     }
                     else{
                         ((Marker) overlay).setIcon(MarkerIcons.BLUE);
