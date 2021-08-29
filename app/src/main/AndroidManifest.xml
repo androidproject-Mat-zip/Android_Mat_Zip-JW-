@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.map">
+    package="com.MatZip.map">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/Theme.FirstProject">
 
         <activity
-            android:name="com.example.map.LoadingActivity"
+            android:name="com.MatZip.map.LoadingActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,16 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapActivity" />
+        <activity android:name="com.MatZip.map.MapActivity" />
 
 
 
-        <activity android:name="com.example.map.SearchActivity">
+        <activity android:name="com.MatZip.map.SearchActivity">
         </activity>
 
-        <activity android:name="com.example.map.MenuDetail">
+        <activity android:name="com.MatZip.map.MenuDetail">
         </activity>
-        <activity android:name="com.example.map.MyPageActivity">
+        <activity android:name="com.MatZip.map.MyPageActivity">
         </activity>
     </application>
 
